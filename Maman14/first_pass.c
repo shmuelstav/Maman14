@@ -8,6 +8,8 @@ ch --> filename
 /*
 The purpose of this source file is to complete the "first pass" as specified on the assignment project.
 */
+
+#define cwc
 #define _CRT_NONSTDC_NO_WARNINGS
 #include "asm.h"
 
