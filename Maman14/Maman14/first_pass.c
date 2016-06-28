@@ -1,5 +1,5 @@
 /* ================= first_pass.c ===================*/ 
-//iguguigui
+
 /* !!!Gady Renames 
 
 ch --> filename
@@ -8,8 +8,6 @@ ch --> filename
 /*
 The purpose of this source file is to complete the "first pass" as specified on the assignment project.
 */
-
-#define cwc
 #define _CRT_NONSTDC_NO_WARNINGS
 #include "asm.h"
 
@@ -551,12 +549,6 @@ int addmeth(char *line){
 	if (islabel(line))
 		//fix the []
 		return DirectAddressing;
-	/* this is change
-	
-	if (islabel(line) == '[') // need to find it after label
-		return InstantDynamicAddressing;
-	
-	*/
 	if (islabel(line) == '[') // need to find it after label
 		return InstantDynamicAddressing;
 		
@@ -700,29 +692,6 @@ int islabel(char *line){
 			return false;
 		if(i == labelMax){
 			error= labelTooLong;
-			return false;
-		}
-		line++;
-	}
-	return true;
-}
-/*-------------------- islabel ----------------------
-isInstantDynamic: returns 1 if the answer is true
-----------------------------------------------------
-
-*/
-int isInstantDynamic(char *line) {
-	int i = 0;
-	if (line == NULL)
-		return 0;
-	while (cont(line) && *line != ',') {
-		if (i == 0 && !isalpha(*line))
-			return false;
-		i++;
-		if (!isdigit(*line) && !isalpha(*line))
-			return false;
-		if (i == labelMax) {
-			error = labelTooLong;
 			return false;
 		}
 		line++;
